@@ -1,13 +1,12 @@
 const getNthElement = (index, array) => {
   const newIndex = 0;
-  if( index < array.length) {
+  if (index < array.length) {
     return array[index];
   }
-    else if (index >= array.length){
-      return array[newIndex + (index - array.length)]
-    }
- };
-
+  if (index >= array.length) {
+    return array[newIndex + (index - array.length)];
+  }
+};
 
 const arrayToCSVString = array => {
   return array.join();
@@ -25,7 +24,7 @@ const addToArray2 = (element, array) => {
   const myArray = array.slice();
   myArray.push(element);
   return myArray;
-}
+};
 
 const removeNthElement = (index, array) => {
   return array.splice(index, 1);
@@ -36,24 +35,31 @@ const numbersToStrings = numbers => {
 };
 
 function uppercaseWordsInArray(strings) {
-  return String(strings).toUpperCase().split(",");
+  return String(strings)
+    .toUpperCase()
+    .split(',');
 }
 
 const reverseWordsInArray = strings => {
-  return strings.map(item => item.split('').reverse().join(''));
+  return strings.map(item =>
+    item
+      .split('')
+      .reverse()
+      .join(''),
+  );
 };
 
 function onlyEven(numbers) {
-  const evenNumbers = numbers.filter((num) => num % 2 === 0);
+  const evenNumbers = numbers.filter(num => num % 2 === 0);
   return evenNumbers;
 }
 
 const removeNthElement2 = (index, array) => {
-   return array.slice(0,index).concat(array.slice(index+1))
+  return array.slice(0, index).concat(array.slice(index + 1));
 };
 
 const elementsStartingWithAVowel = strings => {
-   return strings.filter(str => /^[aeiou]/i.test(str));
+  return strings.filter(str => /^[aeiou]/i.test(str));
 };
 
 const removeSpaces = string => {
@@ -65,9 +71,8 @@ const sumNumbers = numbers => {
 };
 
 const sortByLastLetter = strings => {
-  return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)); 
-  
-}; 
+  return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+};
 
 module.exports = {
   getNthElement,
@@ -84,5 +89,5 @@ module.exports = {
   elementsStartingWithAVowel,
   removeSpaces,
   sumNumbers,
-  sortByLastLetter
+  sortByLastLetter,
 };
